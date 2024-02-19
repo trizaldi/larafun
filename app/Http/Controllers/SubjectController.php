@@ -7,15 +7,15 @@ use Illuminate\Http\Request;
 class SubjectController extends Controller
 {
     //
-    public function viewAdmin() :View{
+    public function viewAdmin() {
         return view('Userview/adminsubject');
     }
 
-    public function viewTeacher() :View{
+    public function viewTeacher() {
         return view('Userview/teachersubject');
     }
 
-    public function viewStudent() :View{
+    public function viewStudent() {
         return view('Userview/studentsubject');
     }
 }
