@@ -47,3 +47,4 @@ Route::get('/adminsubject}', [SubjectController::class, 'viewAdmin']);
 Route::get('/task', [TaskController::class, 'index']);
 Route::get('/task/create', [TaskController::class, 'create']);
 Route::post('/task/store', [TaskController::class, 'store']);
+Route::get('/task/{task}', [TaskController::class, 'show']);

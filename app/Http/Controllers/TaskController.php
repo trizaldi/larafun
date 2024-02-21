@@ -13,7 +13,9 @@ class TaskController extends Controller
     //
     public function index(){
         
-        return view('task.index');
+        $tasks = Task::all();
+        //$tasks = DB::table('tasks')->get(); 
+        return view('task.index',compact('tasks'));
     }
 
     public function create(){
@@ -23,10 +25,15 @@ class TaskController extends Controller
     public function store(TaskRequest $request){
         
         $validatedData = $request->validated();
-        //Task::created($validatedData);
+        Task::created($validatedData);
         
-        DB::table('task')->insert($validatedData);
+        //DB::table('task')->insert($validatedData);
         return redirect('/task');
         //return view('task.create');
+    }
+
+    public function show(Task $task)
+    {
+        return view('task.show',compact('task'));
     }
 }
