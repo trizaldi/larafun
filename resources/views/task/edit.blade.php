@@ -12,7 +12,9 @@
             <input type="text" name="name" id="" value="{{$task->name}}">
             <br>
             <label for="description">Description</label>
-            <textarea name="description" id="" cols="30" rows="10">{{$task->description}}</textarea>
+            <textarea name="description" id="" cols="30" rows="10">
+                {{$task->description}}
+            </textarea>
             <br>
             <button type="submit">Edit Task</button>
             

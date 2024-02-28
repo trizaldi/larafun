@@ -28,11 +28,12 @@ class TaskController extends Controller
 
     public function store(TaskRequest $request){
         
-        $time = date('Y-m-d H:i:s');
+        //$time = date('Y-m-d H:i:s');
         $validatedData = $request->validated();
-        //Task::created($validatedData);
+        //Task::created($validatedData);//orm query 1
         
-        DB::table('tasks')->insert($validatedData,$time,$time);
+        DB::table('tasks')->insert($validatedData); //2
+
         return redirect('/task');
         //return view('task.create');
     }
@@ -51,5 +52,10 @@ class TaskController extends Controller
         $validatedData = $request->validated();
         $task->update($validatedData);
         return redirect("/task/{$task->id}");
+    }
+
+    public function delete (Task $task){
+        $task->delete();
+        return redirect('/task');
     }
 }
