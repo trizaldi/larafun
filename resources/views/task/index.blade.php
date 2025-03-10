@@ -4,7 +4,7 @@
     <div>
         <h1>Task List</h1>
 
-        @foreach ($a as $task)
+        @foreach ($tasks as $task)
             <div class="task-item">
                 <strong>Name : {{ $task->name }}</strong>
                 <p>Description : {{ $task->description }}</p>
